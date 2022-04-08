@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/fake-people-react/static/css/main.57187369.css",
+    "main.js": "/fake-people-react/static/js/main.97ac7e09.js",
+    "index.html": "/fake-people-react/index.html",
+    "main.57187369.css.map": "/fake-people-react/static/css/main.57187369.css.map",
+    "main.97ac7e09.js.map": "/fake-people-react/static/js/main.97ac7e09.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.57187369.css",
+    "static/js/main.97ac7e09.js"
+  ]
+}
