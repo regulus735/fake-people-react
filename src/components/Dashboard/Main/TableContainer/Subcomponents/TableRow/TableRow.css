@@ -1,0 +1,111 @@
+.table>* {
+   display: flex;
+   align-items: center;
+   height: 50px;
+}
+
+.table>*>* {
+   flex-basis: 20%;
+   margin-right: 10px;
+}
+
+.table>:nth-child(odd) {
+   background-color: #070A1A;
+}
+
+.table>:nth-child(even) {
+   background-color: #191C2B;
+}
+
+.table>:last-child {
+   border-radius: 0 0 4px 4px;
+}
+
+.table .checked {
+   background-color: var(--green-opacity);
+}
+
+.table .header {
+   color: var(--page-bgc);
+   background-color: var(--green);
+   font-weight: bold;
+   border-radius: 0 0 4px 4px;
+}
+
+.table-control {
+   position: relative;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin-left: 22px;
+   margin-right: 20px;
+   height: 16px;
+   width: 16px;
+
+   flex-basis: 0;
+}
+
+
+/* checkbox */
+.table input[type="checkbox"] {
+   height: inherit;
+   width: inherit;
+   appearance: none;
+   border-radius: 4px;
+   border: 1px solid #2c2f3c;
+   cursor: pointer;
+}
+
+/* in header */
+.table .header input[type="checkbox"] {
+   background-color: #2c2f3c;
+}
+
+/* in row */
+.table .row input[type="checkbox"] {
+   border-color: var(--green);
+   background-color: transparent;
+}
+
+.table .row input[type="checkbox"]:checked {
+   background-color: var(--green);
+}
+
+.table .row .icon {
+   color: black;
+}
+
+.table input[type="checkbox"]:checked~.icon {
+   display: block;
+}
+
+
+.table .icon {
+   cursor: pointer;
+   position: absolute;
+   font-size: 14px;
+   color: var(--green);
+   display: none;
+}
+
+/*  */
+
+.table p,
+.table .input-container input {
+   font-size: 1.6rem;
+   text-overflow: ellipsis;
+   overflow: hidden;
+   white-space: nowrap;
+}
+
+.table .email {
+   flex-basis: 28%;
+}
+
+.table .edit {
+   color: var(--green);
+   font-weight: bold;
+   flex-basis: 100px;
+   margin-left: 20px;
+   margin-right: 0;
+}

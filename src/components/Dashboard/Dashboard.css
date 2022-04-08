@@ -1,0 +1,13 @@
+.dashboard {
+   --open-width: 214px;
+   --close-width: 100px;
+
+   /* height: 100%; */
+   display: flex;
+}
+
+.dashboard>.wrapper {
+   width: 100%;
+   display: flex;
+   justify-content: center;
+}

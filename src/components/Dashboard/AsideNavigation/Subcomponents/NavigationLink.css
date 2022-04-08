@@ -1,0 +1,13 @@
+.navigation a {
+   height: 55px;
+   margin-bottom: 10px;
+   transition: 0.2s;
+}
+
+.navigation a:hover {
+   background-color: #0c3925;
+}
+
+.navigation a.active {
+   color: #1ec144;
+}

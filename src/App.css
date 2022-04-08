@@ -1,38 +1,60 @@
-.App {
-  text-align: center;
+@import url('http://fonts.cdnfonts.com/css/neo-latina');
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;700&display=swap');
+
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   border: none;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+:root {
+   font-size: 10px;
+   --page-bgc: #070A1A;
+   --green: #1ec144;
+   --green-opacity: rgba(30, 193, 68, 0.25);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+   height: 100vh;
+   max-height: 1000px;
+   color: white;
+   background-color: var(--page-bgc);
+   font-family: 'Titillium Web', sans-serif;
+
+   overflow-x: hidden;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+a {
+   color: inherit;
+   text-decoration: none
 }
 
-.App-link {
-  color: #61dafb;
+button {
+   background-color: transparent;
+   cursor: pointer;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#root {
+   height: 100%;
+}
+
+* {
+   scrollbar-width: auto;
+   scrollbar-color: #2c2f3c #070a1a;
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+   width: 16px;
+}
+
+*::-webkit-scrollbar-track {
+   background: #070a1a;
+}
+
+*::-webkit-scrollbar-thumb {
+   background-color: #2c2f3c;
+   border-radius: 10px;
+   border: 3px solid #070a1a;
 }

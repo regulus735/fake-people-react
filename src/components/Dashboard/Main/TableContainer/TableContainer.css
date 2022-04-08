@@ -1,0 +1,14 @@
+.table-container {
+   margin-top: 36px;
+   position: relative;
+}
+
+.table {
+   margin-top: 20px;
+
+   border: 1px solid var(--green);
+   border-radius: 4px;
+
+   overflow-y: auto;
+   max-height: 600px;
+}
