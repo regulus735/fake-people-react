@@ -3,6 +3,11 @@
    align-items: center;
 }
 
+.container-to-copy {
+   width: 100%;
+   padding-right: 20px;
+}
+
 .password div {
    flex-basis: 150px;
 }
@@ -10,14 +15,14 @@
 .password button {
    color: var(--green);
    font-size: 1.8rem;
-   margin-left: 10px;
+   margin: 0 10px;
 }
 
 .table .input-container input {
    background-color: transparent;
    color: inherit;
    font-family: inherit;
-   width: 80%;
+   width: 100%;
 }
 
 .table .input-container input[type='password'] {

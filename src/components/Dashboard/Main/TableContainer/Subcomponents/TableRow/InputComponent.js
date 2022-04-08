@@ -38,10 +38,10 @@ const InputComponent = ({ name, isEditMode, handleChange, inputsData }) => {
       <div className={`input-container ${name}`}>
          {name === 'password'
             ? <>
-               <div onClick={copyToClipboard}><input type={isPasswordShown ? 'text' : 'password'} name='password' value={inputsData.password} disabled={!isEditMode} onChange={handleChange} /></div>
+               <div className='container-to-copy' onClick={copyToClipboard}><input type={isPasswordShown ? 'text' : 'password'} name='password' value={inputsData.password} disabled={!isEditMode} onChange={handleChange} /></div>
                <button onClick={() => setIsPasswordShown(prev => !prev)}><FontAwesomeIcon icon={faEye} /></button>
             </>
-            : <div onClick={copyToClipboard}><input type="text" name={name} value={inputsData[name]} disabled={!isEditMode} onChange={handleChange} /></div>
+            : <div className='container-to-copy' onClick={copyToClipboard}><input type="text" name={name} value={inputsData[name]} disabled={!isEditMode} onChange={handleChange} /></div>
          }
          {showBubble && <SpeechBubble setShowBubble={setShowBubble} />}
       </div>
