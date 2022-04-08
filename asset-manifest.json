@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/fake-people-react/static/css/main.57187369.css",
-    "main.js": "/fake-people-react/static/js/main.f22c5fe6.js",
+    "main.css": "/fake-people-react/static/css/main.1bf73e67.css",
+    "main.js": "/fake-people-react/static/js/main.5fa09ea7.js",
     "index.html": "/fake-people-react/index.html",
-    "main.57187369.css.map": "/fake-people-react/static/css/main.57187369.css.map",
-    "main.f22c5fe6.js.map": "/fake-people-react/static/js/main.f22c5fe6.js.map"
+    "main.1bf73e67.css.map": "/fake-people-react/static/css/main.1bf73e67.css.map",
+    "main.5fa09ea7.js.map": "/fake-people-react/static/js/main.5fa09ea7.js.map"
   },
   "entrypoints": [
-    "static/css/main.57187369.css",
-    "static/js/main.f22c5fe6.js"
+    "static/css/main.1bf73e67.css",
+    "static/js/main.5fa09ea7.js"
   ]
 }
