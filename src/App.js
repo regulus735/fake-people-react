@@ -1,5 +1,5 @@
 import React from 'react';
-import { HashRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 
 import './App.css';
 import Dashboard from './components/Dashboard/Dashboard';
@@ -14,7 +14,7 @@ function App() {
    const LoginComponent = jwtToken ? <Navigate to="/" /> : <Login />
 
    return (
-      <Router>
+      <Router basename={process.env.PUBLIC_URL}>
          <Routes>
             <Route path='/' element={DashboardComponent} />
             <Route path='/login' element={LoginComponent} />
