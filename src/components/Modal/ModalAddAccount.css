@@ -83,3 +83,41 @@
    font-size: 2rem;
    border-radius: 4px;
 }
+
+@media(max-width: 640px) {
+   .modal {
+      width: 90%;
+      height: 80%;
+   }
+
+   .modal form {
+      height: 100%;
+   }
+
+   .modal .close {
+      top: 20px;
+   }
+}
+
+@media(max-width: 375px) {
+   .modal form {
+      width: 90%;
+   }
+
+   .modal form input {
+      padding: 6px 10px;
+      margin-bottom: 10px;
+   }
+
+   .modal form::before {
+      content: "";
+      flex-grow: 1;
+      order: 1;
+   }
+
+   .modal button[type=submit] {
+      order: 1;
+      padding: 5px 10px;
+      margin-bottom: 10%;
+   }
+}

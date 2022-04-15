@@ -3,7 +3,7 @@ import React from 'react';
 import { ACTIONS, TYPES } from '../../TableContainer';
 import InputContainer from './InputsContainer';
 
-import './TableRow.css';
+import './TableRow.sass';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheck } from '@fortawesome/free-solid-svg-icons';
@@ -15,8 +15,8 @@ const headerComponent =
       <p>Surname</p>
       <p className='email'>E-mail address</p>
       <p>Password</p>
-      <p>Coming soon</p>
-      <button className='edit'></button>
+      <p className='coming'>Coming soon</p>
+      <button className='edit-container'></button>
    </>
 
 const TableRow = ({ type, item, dispatch }) => {

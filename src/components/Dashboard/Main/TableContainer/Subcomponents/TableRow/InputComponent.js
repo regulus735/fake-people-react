@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-import './InputComponent.css';
+import './InputComponent.sass';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye, faCheck } from '@fortawesome/free-solid-svg-icons';
@@ -23,7 +23,7 @@ const SpeechBubble = ({ setShowBubble }) => {
    )
 }
 
-const InputComponent = ({ name, isEditMode, handleChange, inputsData }) => {
+const InputComponent = ({ name, isEditMode, handleChange, inputsData, label, errorList = [] }) => {
    const [showBubble, setShowBubble] = useState(false);
    const [isPasswordShown, setIsPasswordShown] = useState(false);
 
@@ -35,7 +35,7 @@ const InputComponent = ({ name, isEditMode, handleChange, inputsData }) => {
    }
 
    return (
-      <div className={`input-container ${name}`}>
+      <div className={`input-container ${name} ${errorList.find(i => i === name) ? 'error' : ''}`} data-label={label}>
          {name === 'password'
             ? <>
                <div className='container-to-copy' onClick={copyToClipboard}><input type={isPasswordShown ? 'text' : 'password'} name='password' value={inputsData.password} disabled={!isEditMode} onChange={handleChange} /></div>

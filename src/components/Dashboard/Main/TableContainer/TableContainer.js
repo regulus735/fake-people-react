@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useReducer, useState } from 'react';
 import './TableContainer.css';
 
@@ -102,7 +103,9 @@ const TableContainer = () => {
          <AboveTable items={items} page={paginationData.page} setRefresh={setRefresh} />
          <div className='table'>
             <TableRow type={TYPES.HEADER} dispatch={dispatch} item={{ checkedAll }} />
-            {rows}
+            <div className='rows'>
+               {rows}
+            </div>
          </div>
          <Pagination data={paginationData} />
       </div>

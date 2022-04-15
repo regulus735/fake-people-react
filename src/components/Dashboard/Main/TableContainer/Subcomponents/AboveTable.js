@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
-import './AboveTable.css';
+import './AboveTable.sass';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrashCan, faPlus } from '@fortawesome/free-solid-svg-icons';

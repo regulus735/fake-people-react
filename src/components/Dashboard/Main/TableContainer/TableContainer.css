@@ -9,6 +9,23 @@
    border: 1px solid var(--green);
    border-radius: 4px;
 
-   overflow-y: auto;
-   max-height: 600px;
+   /* overflow-y: auto; */
+   /* overflow-x: hidden; */
+   max-height: 60vh;
+   display: flex;
+   flex-direction: column;
 }
+
+.rows {
+   overflow-y: auto;
+   display: flex;
+   flex-direction: column;
+}
+
+@media(max-width: 460px) {
+   .rows::-webkit-scrollbar {
+      width: 12px;
+   }
+}
+
+/* @media(max-width: 850px) */

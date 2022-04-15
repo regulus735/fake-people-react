@@ -4,37 +4,50 @@ import isEmail from 'validator/lib/isEmail';
 import request from '../../../../../../helpers/request';
 import InputComponent from './InputComponent';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faXmark } from '@fortawesome/free-solid-svg-icons';
+
 const allowedUpdates = ['name', 'surname', 'email', 'password'];
+
+const getValues = (item) => (
+   Object.fromEntries(
+      Object.entries(item).filter(([k, v]) => allowedUpdates.includes(k))
+   )
+)
 
 const InputContainer = ({ item }) => {
    const [isEditMode, setIsEditMode] = useState(false);
-   const [inputsData, setInputsData] = useState(
-      Object.fromEntries(
-         Object.entries(item).filter(([k, v]) => allowedUpdates.includes(k))
-      )
-   )
+   const [inputsData, setInputsData] = useState(getValues(item))
+
+   const [errorList, setErrorList] = useState([]);
 
    const handleEdit = async () => {
       if (isEditMode) {
-         const objects = Object.entries(inputsData).filter(([k, v]) => v === '' || v.length > 50)
+         let invalidInputs = []
+         Object.entries(inputsData).forEach(([k, v]) => {
+            if (v.length === 0 || v.length > 50)
+               invalidInputs.push(k)
+         })
+
+         setErrorList(invalidInputs)
 
          if (!isEmail(inputsData['email'])) {
-            console.log('email czerwony')
+            setErrorList(prev => [...prev, 'email'])
             return
          }
 
-         if (objects.length === 0) {
+         if (invalidInputs.length === 0) {
             console.log(item._id)
-            const { data, status } = await request.patch(
+            const { status } = await request.patch(
                `/accounts/${item._id}`,
                inputsData
             );
 
             if (status === 200)
                setIsEditMode(false);
-         }
 
-         console.log(objects)
+            return
+         }
          return
       }
 
@@ -48,14 +61,23 @@ const InputContainer = ({ item }) => {
       setInputsData({ ...inputsData, [name]: value });
    }
 
+   const handleCancle = () => {
+      setIsEditMode(false);
+      setInputsData(getValues(item));
+      setErrorList([])
+   }
+
    return (
       <>
-         <InputComponent key={'name'} name='name' isEditMode={isEditMode} handleChange={handleChange} inputsData={inputsData} />
-         <InputComponent key={'surname'} name='surname' isEditMode={isEditMode} handleChange={handleChange} inputsData={inputsData} />
-         <InputComponent key={'email'} name='email' isEditMode={isEditMode} handleChange={handleChange} inputsData={inputsData} />
-         <InputComponent key={'password'} name='password' isEditMode={isEditMode} handleChange={handleChange} inputsData={inputsData} />
-         <p>Coming soon</p>
-         <button className='edit' onClick={handleEdit}>{isEditMode ? 'Save' : 'Edit'}</button>
+         <InputComponent key={'name'} name='name' label='Name' isEditMode={isEditMode} handleChange={handleChange} inputsData={inputsData} errorList={errorList} />
+         <InputComponent key={'surname'} name='surname' label='Surname' isEditMode={isEditMode} handleChange={handleChange} inputsData={inputsData} errorList={errorList} />
+         <InputComponent key={'email'} name='email' label='E-mail address' isEditMode={isEditMode} handleChange={handleChange} inputsData={inputsData} errorList={errorList} />
+         <InputComponent key={'password'} name='password' label='Password' isEditMode={isEditMode} handleChange={handleChange} inputsData={inputsData} errorList={errorList} />
+         <p className='coming' data-label='Coming soon'><span>Coming soon</span></p>
+         <div className='edit-container'>
+            {isEditMode && <button className='cancle' onClick={handleCancle}><FontAwesomeIcon icon={faXmark} /></button>}
+            <button onClick={handleEdit}>{isEditMode ? 'Save' : 'Edit'}</button>
+         </div>
       </>
    );
 }
