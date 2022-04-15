@@ -89,7 +89,8 @@
 @media(max-width: 640px) {
    .modal {
       width: 90%;
-      height: 80%;
+      /* min-height: 80%; */
+      max-height: 100%;
    }
 
    .modal form {
