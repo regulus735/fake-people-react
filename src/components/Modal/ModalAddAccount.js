@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import ReactDOM from 'react-dom'
 
 import './ModalAddAccount.css'
@@ -58,6 +58,13 @@ const ModalAddAccount = ({ onClose, setRefresh }) => {
          return
       }
    }
+
+   useEffect(() => {
+      document.body.style.overflow = "hidden";
+
+      return () => document.body.removeAttribute('style', '');
+   }, [])
+
 
    return ReactDOM.createPortal(
       <div className='overlay-modal'>
